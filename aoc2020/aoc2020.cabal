@@ -49,6 +49,7 @@ executable aoc2020-exe
     , parsec
   default-language: Haskell2010
 
+
 test-suite aoc2020-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
