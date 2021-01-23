@@ -1,6 +1,8 @@
 {-# LANGUAGE ScopedTypeVariables#-}
 import Text.Parsec
 import Data.Char
+import qualified Data.Vector as V
+import qualified Data.Set as S
 -- shit
 
 type Parser = Parsec String ()
@@ -36,4 +38,4 @@ enump = choice $ map sr [minBound :: b .. maxBound :: b]
 main :: IO ()
 main = do
   xs <- lines <$> readFile "./data/day08.txt"
-  print $ map (parse p "") xs
+  print $ V.fromList . map (parse p "") xs
